@@ -1,0 +1,10 @@
+*.lps
+*.res
+*.lrj
+*.mo
+*.sh
+
+backup/
+lib/
+debug/
+release/
