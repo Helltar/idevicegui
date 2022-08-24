@@ -5,7 +5,7 @@ unit uMainForm;
 interface
 
 uses
-  SysUtils, Forms, Graphics, Dialogs, StdCtrls, ExtCtrls, ActnList, LCLIntf;
+  SysUtils, Forms, Graphics, Dialogs, StdCtrls, ExtCtrls, ActnList, LCLIntf, Classes;
 
 type
 
@@ -31,7 +31,9 @@ type
     procedure actMountUpdate(Sender: TObject);
     procedure actUmountExecute(Sender: TObject);
     procedure actUmountUpdate(Sender: TObject);
+    procedure btnAboutClick(Sender: TObject);
     procedure btnExitClick(Sender: TObject);
+    procedure btnSettingsClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure tmMainTimer(Sender: TObject);
   private
@@ -45,6 +47,7 @@ var
 implementation
 
 uses
+  uSettingsForm, uAboutForm,
   uUtils, uidevice;
 
 resourcestring
@@ -75,9 +78,29 @@ begin
   actUmount.Enabled := not mountDir.IsEmpty;
 end;
 
+procedure TfrmMain.btnAboutClick(Sender: TObject);
+begin
+  with TfrmAbout.Create(Self) do
+    try
+      ShowModal;
+    finally
+      Free;
+    end;
+end;
+
 procedure TfrmMain.btnExitClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmMain.btnSettingsClick(Sender: TObject);
+begin
+  with TfrmSettings.Create(Self) do
+    try
+      ShowModal;
+    finally
+      Free;
+    end;
 end;
 
 procedure TfrmMain.actMountUpdate(Sender: TObject);

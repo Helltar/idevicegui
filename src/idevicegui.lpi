@@ -125,6 +125,21 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uLogger"/>
       </Unit>
+      <Unit>
+        <Filename Value="forms/uaboutform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAbout"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uAboutForm"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms/usettingsform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmSettings"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uSettingsForm"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

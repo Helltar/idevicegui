@@ -1,0 +1,9 @@
+object frmAbout: TfrmAbout
+  Left = 800
+  Height = 358
+  Top = 370
+  Width = 421
+  Caption = 'About'
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.2.0'
+end

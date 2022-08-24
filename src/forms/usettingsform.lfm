@@ -1,0 +1,9 @@
+object frmSettings: TfrmSettings
+  Left = 792
+  Height = 240
+  Top = 306
+  Width = 320
+  Caption = 'Settings'
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.2.0'
+end

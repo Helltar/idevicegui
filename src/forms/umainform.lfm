@@ -154,6 +154,7 @@ object frmMain: TfrmMain
     BorderSpacing.Around = 24
     BorderSpacing.InnerBorder = 2
     Caption = 'Settings'
+    OnClick = btnSettingsClick
     TabOrder = 2
   end
   object btnExit: TButton
@@ -189,6 +190,7 @@ object frmMain: TfrmMain
     BorderSpacing.Around = 24
     BorderSpacing.InnerBorder = 2
     Caption = 'About'
+    OnClick = btnAboutClick
     TabOrder = 4
   end
   object actlMain: TActionList
