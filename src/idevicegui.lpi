@@ -101,7 +101,7 @@
     </RequiredPackages>
     <Units>
       <Unit>
-        <Filename Value="idevicegui.pas"/>
+        <Filename Value="idevicegui.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
