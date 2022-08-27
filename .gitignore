@@ -3,6 +3,7 @@
 *.lrj
 *.mo
 *.sh
+*.xcf
 
 backup/
 lib/
