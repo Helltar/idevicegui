@@ -168,10 +168,10 @@ begin
   begin
     gbInfo.Enabled := False;
     gbInfo.Caption := RS_GB_INFO_CAPTION;
-    lblModelNumber.Caption := '';
-    lbliOSVersion.Caption := '';
-    lblSerialNumber.Caption := '';
-    lblCycleCount.Caption := '';
+    lblModelNumber.Caption := RS_MODEL_NUMBER_CAPTION;
+    lbliOSVersion.Caption := RS_OS_VERSION_CAPTION;
+    lblSerialNumber.Caption := RS_SERIAL_NUMBER_CAPTION;
+    lblCycleCount.Caption := RS_CYCLE_COUNT_CAPTION;
   end;
 end;
 

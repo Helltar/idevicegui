@@ -1,11 +1,11 @@
 object frmMain: TfrmMain
-  Left = 753
-  Height = 564
-  Top = 222
+  Left = 659
+  Height = 559
+  Top = 299
   Width = 527
   AutoSize = True
   Caption = 'idevicegui'
-  ClientHeight = 564
+  ClientHeight = 559
   ClientWidth = 527
   Constraints.MinWidth = 400
   OnCreate = FormCreate
@@ -30,6 +30,7 @@ object frmMain: TfrmMain
     Caption = 'not plugged'
     ClientHeight = 196
     ClientWidth = 475
+    Enabled = False
     TabOrder = 0
     object lblModelNumber: TLabel
       AnchorSideLeft.Control = gbInfo
@@ -42,7 +43,7 @@ object frmMain: TfrmMain
       Width = 427
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Around = 24
-      Caption = 'Model Number: null'
+      Caption = 'Model Number'
       ParentColor = False
     end
     object lbliOSVersion: TLabel
@@ -57,7 +58,7 @@ object frmMain: TfrmMain
       Width = 427
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Around = 24
-      Caption = 'OS Version: null'
+      Caption = 'OS Version'
       ParentColor = False
     end
     object lblSerialNumber: TLabel
@@ -72,7 +73,7 @@ object frmMain: TfrmMain
       Width = 427
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Around = 24
-      Caption = 'Serial Number: null'
+      Caption = 'Serial Number'
       ParentColor = False
     end
     object lblCycleCount: TLabel
@@ -87,7 +88,7 @@ object frmMain: TfrmMain
       Width = 427
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Around = 24
-      Caption = 'Charge Cycle Count: null'
+      Caption = 'Charge Cycle Count'
       ParentColor = False
     end
   end
@@ -195,8 +196,8 @@ object frmMain: TfrmMain
     TabOrder = 4
   end
   object actlMain: TActionList
-    Left = 280
-    Top = 112
+    Left = 248
+    Top = 104
     object actMount: TAction
       Caption = '&Mount Photo Directory'
       Enabled = False
@@ -211,7 +212,7 @@ object frmMain: TfrmMain
   end
   object tmMain: TTimer
     OnTimer = tmMainTimer
-    Left = 384
-    Top = 112
+    Left = 352
+    Top = 104
   end
 end
