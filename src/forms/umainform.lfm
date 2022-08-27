@@ -176,7 +176,7 @@ object frmMain: TfrmMain
     BorderSpacing.InnerBorder = 2
     Caption = '&Quit'
     OnClick = btnExitClick
-    TabOrder = 3
+    TabOrder = 4
   end
   object btnAbout: TButton
     AnchorSideLeft.Control = btnSettings
@@ -193,7 +193,7 @@ object frmMain: TfrmMain
     BorderSpacing.InnerBorder = 2
     Caption = '&About'
     OnClick = btnAboutClick
-    TabOrder = 4
+    TabOrder = 3
   end
   object actlMain: TActionList
     Left = 248
