@@ -59,10 +59,10 @@ var
 begin
   Result := '';
 
-  dir := mountPoint + 'idevice_' + TGUID.NewGuid.ToString(True).Split('-')[0];
+  dir := mountPoint + DirectorySeparator + 'idevice_' + TGUID.NewGuid.ToString(True).Split('-')[0];
 
   if not DirectoryExists(dir) then
-    if CreateDir(dir) then
+    if ForceDirectories(dir) then
     begin
       p := procStart('ifuse', dir, False);
 
