@@ -5,7 +5,9 @@ unit uMainForm;
 interface
 
 uses
-  SysUtils, Forms, Graphics, Dialogs, StdCtrls, ExtCtrls, ActnList, LCLIntf, Classes;
+  Classes, SysUtils, Forms, Graphics, Dialogs, StdCtrls, ExtCtrls, ActnList, LCLIntf,
+  //------
+  uConfig;
 
 type
 
@@ -34,11 +36,15 @@ type
     procedure btnAboutClick(Sender: TObject);
     procedure btnExitClick(Sender: TObject);
     procedure btnSettingsClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure tmMainTimer(Sender: TObject);
   private
     mountDir: string;
     procedure updateControls();
+  public
+    config: TConfig;
   end;
 
 var
@@ -54,11 +60,30 @@ resourcestring
   {$I strings.inc}
 
 const
+  CONFIG_FILE = 'config';
   DIR_DCIM = 'DCIM';
 
 {$R *.lfm}
 
 { TfrmMain }
+
+procedure TfrmMain.FormCreate(Sender: TObject);
+var
+  configDir: string;
+
+begin
+  configDir := GetAppConfigDir(False);
+
+  if not DirectoryExists(configDir) then
+    mkDir(configDir);
+
+  config := TConfig.Create(configDir + CONFIG_FILE);
+end;
+
+procedure TfrmMain.FormDestroy(Sender: TObject);
+begin
+  FreeAndNil(config);
+end;
 
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
@@ -110,7 +135,7 @@ end;
 
 procedure TfrmMain.actMountExecute(Sender: TObject);
 begin
-  mountDir := mount(GetUserDir + 'Downloads/');
+  mountDir := mount(config.mountPoint);
 
   if not mountDir.IsEmpty then
     OpenDocument(mountDir + DirectorySeparator + DIR_DCIM);

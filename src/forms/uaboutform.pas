@@ -9,14 +9,7 @@ uses
 
 type
   TfrmAbout = class(TForm)
-  private
-
-  public
-
   end;
-
-var
-  frmAbout: TfrmAbout;
 
 implementation
 

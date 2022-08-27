@@ -12,6 +12,7 @@
       <XPManifest>
         <DpiAware Value="True"/>
       </XPManifest>
+      <Icon Value="0"/>
     </General>
     <BuildModes>
       <Item Name="Default" Default="True"/>
@@ -137,8 +138,14 @@
         <Filename Value="forms/usettingsform.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmSettings"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uSettingsForm"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units/uconfig.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uConfig"/>
       </Unit>
     </Units>
   </ProjectOptions>

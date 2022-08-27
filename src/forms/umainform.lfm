@@ -8,6 +8,8 @@ object frmMain: TfrmMain
   ClientHeight = 564
   ClientWidth = 527
   Constraints.MinWidth = 400
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '2.2.2.0'
@@ -112,10 +114,10 @@ object frmMain: TfrmMain
       AnchorSideTop.Control = pnlButtons
       AnchorSideBottom.Control = pnlButtons
       AnchorSideBottom.Side = asrBottom
-      Left = 150
+      Left = 145
       Height = 33
       Top = 24
-      Width = 178
+      Width = 188
       Action = actMount
       AutoSize = True
       BorderSpacing.Around = 24
@@ -130,15 +132,14 @@ object frmMain: TfrmMain
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = pnlButtons
       AnchorSideBottom.Side = asrBottom
-      Left = 202
+      Left = 185
       Height = 33
       Top = 81
-      Width = 74
+      Width = 108
       Action = actUmount
       AutoSize = True
       BorderSpacing.Around = 24
       BorderSpacing.InnerBorder = 2
-      Caption = 'Umount'
       TabOrder = 1
     end
   end
@@ -149,11 +150,11 @@ object frmMain: TfrmMain
     Left = 24
     Height = 33
     Top = 437
-    Width = 76
+    Width = 86
     AutoSize = True
     BorderSpacing.Around = 24
     BorderSpacing.InnerBorder = 2
-    Caption = 'Settings'
+    Caption = '&Settings'
     OnClick = btnSettingsClick
     TabOrder = 2
   end
@@ -164,15 +165,15 @@ object frmMain: TfrmMain
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
-    Left = 456
+    Left = 446
     Height = 33
     Top = 437
-    Width = 47
+    Width = 57
     Anchors = [akTop, akRight]
     AutoSize = True
     BorderSpacing.Around = 24
     BorderSpacing.InnerBorder = 2
-    Caption = 'Quit'
+    Caption = '&Quit'
     OnClick = btnExitClick
     TabOrder = 3
   end
@@ -182,14 +183,14 @@ object frmMain: TfrmMain
     AnchorSideTop.Control = pnlButtons
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = btnExit
-    Left = 124
+    Left = 134
     Height = 33
     Top = 437
-    Width = 61
+    Width = 71
     AutoSize = True
     BorderSpacing.Around = 24
     BorderSpacing.InnerBorder = 2
-    Caption = 'About'
+    Caption = '&About'
     OnClick = btnAboutClick
     TabOrder = 4
   end
@@ -197,13 +198,13 @@ object frmMain: TfrmMain
     Left = 280
     Top = 112
     object actMount: TAction
-      Caption = 'Mount Photo Directory'
+      Caption = '&Mount Photo Directory'
       Enabled = False
       OnExecute = actMountExecute
       OnUpdate = actMountUpdate
     end
     object actUmount: TAction
-      Caption = 'Disconnect'
+      Caption = '&Disconnect'
       OnExecute = actUmountExecute
       OnUpdate = actUmountUpdate
     end

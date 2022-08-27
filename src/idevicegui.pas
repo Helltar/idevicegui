@@ -14,7 +14,7 @@ uses
   uMainForm,
   uUtils,
   uidevice,
-  uLogger, uAboutForm, uSettingsForm;
+  uLogger, uAboutForm, uSettingsForm, uConfig;
 
 {$R *.res}
 
