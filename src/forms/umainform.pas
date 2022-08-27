@@ -157,6 +157,7 @@ const
 begin
   if isDevicePlugged() then
   begin
+    gbInfo.Enabled := True;
     gbInfo.Caption := getDeviceName();
     lblModelNumber.Caption := RS_MODEL_NUMBER_CAPTION + DELIMITER + getDeviceInfoByKey('ModelNumber');
     lbliOSVersion.Caption := RS_OS_VERSION_CAPTION + DELIMITER + getDeviceInfoByKey('ProductVersion');
@@ -165,11 +166,12 @@ begin
   end
   else
   begin
+    gbInfo.Enabled := False;
     gbInfo.Caption := RS_GB_INFO_CAPTION;
-    lblModelNumber.Caption := RS_MODEL_NUMBER_CAPTION + DELIMITER + RS_NULL;
-    lbliOSVersion.Caption := RS_OS_VERSION_CAPTION + DELIMITER + RS_NULL;
-    lblSerialNumber.Caption := RS_SERIAL_NUMBER_CAPTION + DELIMITER + RS_NULL;
-    lblCycleCount.Caption := RS_CYCLE_COUNT_CAPTION + DELIMITER + RS_NULL;
+    lblModelNumber.Caption := '';
+    lbliOSVersion.Caption := '';
+    lblSerialNumber.Caption := '';
+    lblCycleCount.Caption := '';
   end;
 end;
 
