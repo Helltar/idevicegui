@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
-  Left = 659
+  Left = 605
   Height = 559
-  Top = 299
+  Top = 255
   Width = 527
   AutoSize = True
   Caption = 'idevicegui'
@@ -88,7 +88,7 @@ object frmMain: TfrmMain
       Width = 427
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Around = 24
-      Caption = 'Charge Cycle Count'
+      Caption = 'Cycle Count'
       ParentColor = False
     end
   end

@@ -159,7 +159,7 @@ begin
   begin
     gbInfo.Enabled := True;
     gbInfo.Caption := getDeviceName();
-    lblModelNumber.Caption := RS_MODEL_NUMBER_CAPTION + DELIMITER + getDeviceInfoByKey('ModelNumber');
+    lblModelNumber.Caption := RS_MODEL_NUMBER_CAPTION + DELIMITER + getDeviceInfoByKey('RegulatoryModelNumber');
     lbliOSVersion.Caption := RS_OS_VERSION_CAPTION + DELIMITER + getDeviceInfoByKey('ProductVersion');
     lblSerialNumber.Caption := RS_SERIAL_NUMBER_CAPTION + DELIMITER + getDeviceInfoByKey('SerialNumber');
     lblCycleCount.Caption := RS_CYCLE_COUNT_CAPTION + DELIMITER + getDeviceCycleCount();
