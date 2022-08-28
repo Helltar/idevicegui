@@ -104,13 +104,12 @@ object frmMain: TfrmMain
       AnchorSideTop.Control = gbInfo
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 334
-      Height = 19
+      Left = 380
+      Height = 1
       Top = 24
-      Width = 47
+      Width = 1
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
-      Caption = 'A2631'
       ParentColor = False
     end
     object lbliOSVersionData: TLabel
@@ -118,13 +117,12 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 349
-      Height = 19
-      Top = 67
-      Width = 32
+      Left = 380
+      Height = 1
+      Top = 49
+      Width = 1
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
-      Caption = '15.0'
       ParentColor = False
     end
     object lblSerialNumberData: TLabel
@@ -132,13 +130,12 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 260
-      Height = 19
-      Top = 110
-      Width = 121
+      Left = 380
+      Height = 1
+      Top = 74
+      Width = 1
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
-      Caption = 'XXXXXXXXXXXX'
       ParentColor = False
     end
     object lblCycleCountData: TLabel
@@ -146,13 +143,12 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 372
-      Height = 19
-      Top = 153
-      Width = 9
+      Left = 380
+      Height = 1
+      Top = 99
+      Width = 1
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
-      Caption = '0'
       ParentColor = False
     end
     object lblSpaceUsedData: TLabel
@@ -160,13 +156,12 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 306
-      Height = 19
-      Top = 196
-      Width = 75
+      Left = 380
+      Height = 1
+      Top = 124
+      Width = 1
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
-      Caption = '0GB / 0GB'
       ParentColor = False
     end
   end
@@ -292,7 +287,6 @@ object frmMain: TfrmMain
     end
   end
   object tmMain: TTimer
-    Interval = 5000
     OnTimer = tmMainTimer
     Left = 168
     Top = 392

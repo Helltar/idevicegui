@@ -5,8 +5,7 @@ unit uMainForm;
 interface
 
 uses
-  Classes, SysUtils, Forms, Graphics, Dialogs, StdCtrls, ExtCtrls, ActnList,
-  LCLIntf, Buttons, Menus,
+  SysUtils, Forms, Graphics, Dialogs, StdCtrls, ExtCtrls, ActnList, LCLIntf, Buttons, Menus,
   //------
   uConfig;
 
@@ -53,9 +52,9 @@ type
     procedure tmMainTimer(Sender: TObject);
   private
     mountDir: string;
-    procedure updateControls();
   public
     config: TConfig;
+    procedure updateControls();
   end;
 
 var
@@ -68,7 +67,7 @@ uses
   uUtils, uidevice;
 
 resourcestring
-  {$I strings.inc}
+  RS_GB_INFO_CAPTION = 'not plugged';
 
 const
   CONFIG_FILE = 'config';
@@ -165,46 +164,46 @@ begin
 end;
 
 procedure TfrmMain.updateControls;
+var
+  deviceName: string;
+
 begin
   if isDevicePlugged() then
   begin
-    gbInfo.Enabled := True;
-    gbInfo.Caption := getDeviceName();
+    if not gbInfo.Enabled then
+      gbInfo.Enabled := True;
 
-    lblModelNumber.Caption := RS_MODEL_NUMBER_CAPTION;
-    lblModelNumberData.Caption := getDeviceInfoByKey('RegulatoryModelNumber');
+    deviceName := getDeviceName();
 
-    lbliOSVersion.Caption := RS_OS_VERSION_CAPTION;
-    lbliOSVersionData.Caption := getDeviceInfoByKey('ProductVersion');
+    if gbInfo.Caption <> deviceName then
+      gbInfo.Caption := deviceName;
 
-    lblSerialNumber.Caption := RS_SERIAL_NUMBER_CAPTION;
-    lblSerialNumberData.Caption := getDeviceInfoByKey('SerialNumber');
+    if lblModelNumberData.Caption = '' then
+      lblModelNumberData.Caption := getDeviceInfoByKey('RegulatoryModelNumber');
 
-    lblCycleCount.Caption := RS_CYCLE_COUNT_CAPTION;
-    lblCycleCountData.Caption := getDeviceCycleCount();
+    if lbliOSVersionData.Caption = '' then
+      lbliOSVersionData.Caption := getDeviceInfoByKey('ProductVersion');
 
-    lblSpaceUsed.Caption := RS_SPACE_USED;
-    lblSpaceUsedData.Caption := formatByteSize(StrToInt64(getDiskUsage(TOTAL_DATA_CAPACITY))) + ' / ' + formatDiskCapacity(StrToInt64(getDiskUsage(TOTAL_DISK_CAPACITY)));
+    if lblSerialNumberData.Caption = '' then
+      lblSerialNumberData.Caption := getDeviceInfoByKey('SerialNumber');
+
+    if lblCycleCountData.Caption = '' then
+      lblCycleCountData.Caption := getDeviceCycleCount();
+
+    if lblSpaceUsedData.Caption = '' then
+      lblSpaceUsedData.Caption :=
+        formatByteSize(StrToInt64(getDiskUsage(TOTAL_DATA_CAPACITY))) + ' / ' + formatDiskCapacity(StrToInt64(getDiskUsage(TOTAL_DISK_CAPACITY)));
   end
   else
+  if gbInfo.Enabled then
   begin
     gbInfo.Enabled := False;
     gbInfo.Caption := RS_GB_INFO_CAPTION;
-
-    lblModelNumber.Caption := RS_MODEL_NUMBER_CAPTION;
-    lblModelNumberData.Caption := 'A2631';
-
-    lbliOSVersion.Caption := RS_OS_VERSION_CAPTION;
-    lbliOSVersionData.Caption := '15.0';
-
-    lblSerialNumber.Caption := RS_SERIAL_NUMBER_CAPTION;
-    lblSerialNumberData.Caption := 'XXXXXXXXXXXX';
-
-    lblCycleCount.Caption := RS_CYCLE_COUNT_CAPTION;
-    lblCycleCountData.Caption := '0';
-
-    lblSpaceUsed.Caption := RS_SPACE_USED;
-    lblSpaceUsedData.Caption := '0GB / 0GB';
+    lblModelNumberData.Caption := '';
+    lbliOSVersionData.Caption := '';
+    lblSerialNumberData.Caption := '';
+    lblCycleCountData.Caption := '';
+    lblSpaceUsedData.Caption := '';
   end;
 end;
 
