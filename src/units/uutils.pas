@@ -5,7 +5,7 @@ unit uUtils;
 interface
 
 uses
-  Classes, SysUtils, process, Math;
+  Classes, SysUtils, Math, process;
 
 type
   TProcessRec = record
@@ -14,13 +14,13 @@ type
     ExitStatus: integer;
   end;
 
+function formatByteSize(const bytes: int64): string;
+function formatDiskCapacity(const bytes: int64): string;
+function mount(const mountPoint: string): string;
 function procStart(const AExecutable: string; const AParameters: TProcessStrings; const waitOnExit: boolean = True): TProcessRec;
 function procStart(const executable, parameters: string; const waitOnExit: boolean = True): TProcessRec;
 function procStart(const executable: string): TProcessRec;
-function mount(const mountPoint: string): string;
 function umount(const dir: string): boolean;
-function formatByteSize(const bytes: int64): string;
-function formatDiskCapacity(const bytes: int64): string;
 
 implementation
 
