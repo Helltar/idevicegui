@@ -4,5 +4,6 @@ RS_CYCLE_COUNT_CAPTION = 'Cycle Count';
 RS_MODEL_NUMBER_CAPTION = 'Model Number';
 RS_OS_VERSION_CAPTION = 'OS Version';
 RS_SERIAL_NUMBER_CAPTION = 'Serial Number';
+RS_SPACE_USED = 'Space used';
 
 RS_NULL = 'null';

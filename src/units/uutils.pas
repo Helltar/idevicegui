@@ -5,7 +5,7 @@ unit uUtils;
 interface
 
 uses
-  Classes, SysUtils, process;
+  Classes, SysUtils, process, Math;
 
 type
   TProcessRec = record
@@ -19,6 +19,8 @@ function procStart(const executable, parameters: string; const waitOnExit: boole
 function procStart(const executable: string): TProcessRec;
 function mount(const mountPoint: string): string;
 function umount(const dir: string): boolean;
+function formatByteSize(const bytes: int64): string;
+function formatDiskCapacity(const bytes: int64): string;
 
 implementation
 
@@ -126,6 +128,27 @@ begin
   finally
     FreeAndNil(p);
   end;
+end;
+
+function formatByteSize(const bytes: int64): string;
+const
+  desc: array [0 .. 8] of string = ('Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+
+var
+  i: integer;
+
+begin
+  i := 0;
+
+  while bytes > Power(1024, i + 1) do
+    Inc(i);
+
+  Result := FormatFloat('###0.##', bytes / Power(1024, i)) + desc[i];
+end;
+
+function formatDiskCapacity(const bytes: int64): string;
+begin
+  Result := IntToStr(bytes div 1000000000) + 'GB';
 end;
 
 end.

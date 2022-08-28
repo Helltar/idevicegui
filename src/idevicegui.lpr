@@ -9,12 +9,9 @@ uses
   {$IFDEF HASAMIGA}
   athreads,
   {$ENDIF}
-  Interfaces,
-  Forms,
-  uMainForm,
-  uUtils,
-  uidevice,
-  uLogger, uAboutForm, uSettingsForm, uConfig;
+  Interfaces, Forms,
+  uMainForm, uAboutForm, uSettingsForm,
+  uUtils, uidevice, uLogger, uConfig;
 
 {$R *.res}
 

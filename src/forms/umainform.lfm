@@ -1,11 +1,11 @@
 object frmMain: TfrmMain
-  Left = 605
-  Height = 559
-  Top = 255
+  Left = 814
+  Height = 577
+  Top = 217
   Width = 527
   AutoSize = True
   Caption = 'idevicegui'
-  ClientHeight = 559
+  ClientHeight = 577
   ClientWidth = 527
   Constraints.MinWidth = 400
   OnCreate = FormCreate
@@ -21,14 +21,14 @@ object frmMain: TfrmMain
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 24
-    Height = 227
+    Height = 270
     Top = 24
     Width = 479
     Anchors = [akTop, akLeft, akRight]
     AutoSize = True
     BorderSpacing.Around = 24
     Caption = 'not plugged'
-    ClientHeight = 196
+    ClientHeight = 239
     ClientWidth = 475
     Enabled = False
     TabOrder = 0
@@ -91,6 +91,48 @@ object frmMain: TfrmMain
       Caption = 'Cycle Count'
       ParentColor = False
     end
+    object lblSpaceUsed: TLabel
+      AnchorSideLeft.Control = gbInfo
+      AnchorSideTop.Control = lblCycleCount
+      AnchorSideTop.Side = asrBottom
+      Left = 24
+      Height = 1
+      Top = 196
+      Width = 1
+      BorderSpacing.Left = 24
+      BorderSpacing.Bottom = 24
+      ParentColor = False
+    end
+    object lblDataCapacity: TLabel
+      AnchorSideLeft.Control = lblSpaceUsed
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblCycleCount
+      AnchorSideTop.Side = asrBottom
+      Left = 25
+      Height = 19
+      Top = 196
+      Width = 54
+      BorderSpacing.Bottom = 24
+      Caption = '64GB / '
+      ParentColor = False
+    end
+    object lblDiskCapacity: TLabel
+      AnchorSideLeft.Control = lblDataCapacity
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblCycleCount
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = gbInfo
+      AnchorSideRight.Side = asrBottom
+      Left = 79
+      Height = 19
+      Top = 196
+      Width = 372
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Right = 24
+      BorderSpacing.Bottom = 24
+      Caption = '128GB'
+      ParentColor = False
+    end
   end
   object pnlButtons: TPanel
     AnchorSideLeft.Control = Owner
@@ -100,7 +142,7 @@ object frmMain: TfrmMain
     AnchorSideRight.Side = asrBottom
     Left = 24
     Height = 138
-    Top = 275
+    Top = 318
     Width = 479
     Anchors = [akTop, akLeft, akRight]
     AutoSize = True
@@ -150,7 +192,7 @@ object frmMain: TfrmMain
     AnchorSideTop.Side = asrBottom
     Left = 24
     Height = 33
-    Top = 437
+    Top = 480
     Width = 86
     AutoSize = True
     BorderSpacing.Around = 24
@@ -168,7 +210,7 @@ object frmMain: TfrmMain
     AnchorSideRight.Side = asrBottom
     Left = 446
     Height = 33
-    Top = 437
+    Top = 480
     Width = 57
     Anchors = [akTop, akRight]
     AutoSize = True
@@ -186,7 +228,7 @@ object frmMain: TfrmMain
     AnchorSideRight.Control = btnExit
     Left = 134
     Height = 33
-    Top = 437
+    Top = 480
     Width = 71
     AutoSize = True
     BorderSpacing.Around = 24

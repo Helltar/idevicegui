@@ -23,6 +23,9 @@ type
     btnExit: TButton;
     btnAbout: TButton;
     gbInfo: TGroupBox;
+    lblSpaceUsed: TLabel;
+    lblDataCapacity: TLabel;
+    lblDiskCapacity: TLabel;
     lblModelNumber: TLabel;
     lbliOSVersion: TLabel;
     lblSerialNumber: TLabel;
@@ -159,19 +162,29 @@ begin
   begin
     gbInfo.Enabled := True;
     gbInfo.Caption := getDeviceName();
+
     lblModelNumber.Caption := RS_MODEL_NUMBER_CAPTION + DELIMITER + getDeviceInfoByKey('RegulatoryModelNumber');
     lbliOSVersion.Caption := RS_OS_VERSION_CAPTION + DELIMITER + getDeviceInfoByKey('ProductVersion');
     lblSerialNumber.Caption := RS_SERIAL_NUMBER_CAPTION + DELIMITER + getDeviceInfoByKey('SerialNumber');
     lblCycleCount.Caption := RS_CYCLE_COUNT_CAPTION + DELIMITER + getDeviceCycleCount();
+
+    lblSpaceUsed.Caption := RS_SPACE_USED + DELIMITER;
+    lblDataCapacity.Caption := formatByteSize(StrToInt64(getDiskUsage(TOTAL_DATA_CAPACITY))) + ' / ';
+    lblDiskCapacity.Caption := formatDiskCapacity(StrToInt64(getDiskUsage(TOTAL_DISK_CAPACITY)));
   end
   else
   begin
     gbInfo.Enabled := False;
     gbInfo.Caption := RS_GB_INFO_CAPTION;
+
     lblModelNumber.Caption := RS_MODEL_NUMBER_CAPTION;
     lbliOSVersion.Caption := RS_OS_VERSION_CAPTION;
     lblSerialNumber.Caption := RS_SERIAL_NUMBER_CAPTION;
     lblCycleCount.Caption := RS_CYCLE_COUNT_CAPTION;
+
+    lblSpaceUsed.Caption := RS_SPACE_USED;
+    lblDataCapacity.Caption := '';
+    lblDiskCapacity.Caption := '';
   end;
 end;
 
