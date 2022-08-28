@@ -1,12 +1,12 @@
 object frmMain: TfrmMain
   Left = 726
-  Height = 528
+  Height = 531
   Top = 275
-  Width = 457
+  Width = 425
   AutoSize = True
   Caption = 'idevicegui'
-  ClientHeight = 528
-  ClientWidth = 457
+  ClientHeight = 531
+  ClientWidth = 425
   Constraints.MinWidth = 400
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -23,13 +23,13 @@ object frmMain: TfrmMain
     Left = 24
     Height = 270
     Top = 24
-    Width = 409
+    Width = 377
     Anchors = [akTop, akLeft, akRight]
     AutoSize = True
     BorderSpacing.Around = 24
     Caption = 'not plugged'
     ClientHeight = 239
-    ClientWidth = 405
+    ClientWidth = 373
     Enabled = False
     TabOrder = 0
     object lblModelNumber: TLabel
@@ -104,7 +104,7 @@ object frmMain: TfrmMain
       AnchorSideTop.Control = gbInfo
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 380
+      Left = 348
       Height = 1
       Top = 24
       Width = 1
@@ -117,7 +117,7 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 380
+      Left = 348
       Height = 1
       Top = 49
       Width = 1
@@ -130,7 +130,7 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 380
+      Left = 348
       Height = 1
       Top = 74
       Width = 1
@@ -143,7 +143,7 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 380
+      Left = 348
       Height = 1
       Top = 99
       Width = 1
@@ -156,7 +156,7 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 380
+      Left = 348
       Height = 1
       Top = 124
       Width = 1
@@ -174,13 +174,13 @@ object frmMain: TfrmMain
     Left = 24
     Height = 33
     Top = 318
-    Width = 409
+    Width = 377
     Anchors = [akTop, akLeft, akRight]
     AutoSize = True
     BorderSpacing.Around = 24
     BevelOuter = bvNone
     ClientHeight = 33
-    ClientWidth = 409
+    ClientWidth = 377
     TabOrder = 1
     object btnMount: TButton
       AnchorSideLeft.Control = pnlButtons
@@ -204,7 +204,7 @@ object frmMain: TfrmMain
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = pnlButtons
       AnchorSideBottom.Side = asrBottom
-      Left = 325
+      Left = 293
       Height = 33
       Top = 0
       Width = 84
@@ -221,7 +221,7 @@ object frmMain: TfrmMain
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
-    Left = 395
+    Left = 363
     Height = 27
     Hint = 'Menu'
     Top = 375

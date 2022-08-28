@@ -1,12 +1,12 @@
 object frmSettings: TfrmSettings
   Left = 631
-  Height = 248
+  Height = 246
   Top = 413
-  Width = 508
+  Width = 504
   AutoSize = True
   Caption = 'Settings'
-  ClientHeight = 248
-  ClientWidth = 508
+  ClientHeight = 246
+  ClientWidth = 504
   Constraints.MinWidth = 400
   OnCreate = FormCreate
   OnShow = FormShow
@@ -31,7 +31,7 @@ object frmSettings: TfrmSettings
     Left = 24
     Height = 33
     Top = 67
-    Width = 399
+    Width = 395
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Around = 24
     Enabled = False
@@ -44,7 +44,7 @@ object frmSettings: TfrmSettings
     AnchorSideTop.Side = asrCenter
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
-    Left = 447
+    Left = 443
     Height = 29
     Top = 69
     Width = 37
@@ -60,7 +60,7 @@ object frmSettings: TfrmSettings
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
-    Left = 422
+    Left = 418
     Height = 33
     Top = 124
     Width = 62

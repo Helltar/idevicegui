@@ -52,9 +52,9 @@ type
     procedure tmMainTimer(Sender: TObject);
   private
     mountDir: string;
+    procedure updateControls();
   public
     config: TConfig;
-    procedure updateControls();
   end;
 
 var
@@ -88,6 +88,8 @@ begin
     mkDir(configDir);
 
   config := TConfig.Create(configDir + CONFIG_FILE);
+
+  updateControls();
 end;
 
 procedure TfrmMain.FormDestroy(Sender: TObject);
@@ -185,7 +187,7 @@ begin
       lbliOSVersionData.Caption := getDeviceInfoByKey('ProductVersion');
 
     if lblSerialNumberData.Caption = '' then
-      lblSerialNumberData.Caption := getDeviceInfoByKey('SerialNumber');
+      lblSerialNumberData.Caption := getDeviceInfoByKey('SerialNumber'); // 'DX0XXXXXX000'
 
     if lblCycleCountData.Caption = '' then
       lblCycleCountData.Caption := getDeviceCycleCount();

@@ -5,7 +5,7 @@ unit uSettingsForm;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, Forms, Graphics, Dialogs, StdCtrls;
 
 type
 
