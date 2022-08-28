@@ -1,10 +1,10 @@
 object frmAbout: TfrmAbout
   Left = 670
-  Height = 260
+  Height = 284
   Top = 367
   Width = 400
   Caption = 'About'
-  ClientHeight = 260
+  ClientHeight = 284
   ClientWidth = 400
   Constraints.MinHeight = 260
   Constraints.MinWidth = 400
