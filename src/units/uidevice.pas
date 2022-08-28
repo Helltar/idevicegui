@@ -8,7 +8,6 @@ uses
   Classes, SysUtils, uregexpr;
 
 function getDeviceCycleCount(): string;
-function getDeviceInfo(): string;
 function getDeviceInfoByKey(const key: string): string;
 function getDeviceName(): string;
 function isDevicePlugged(): boolean;
@@ -28,32 +27,9 @@ begin
   Result := procStart('idevicename').Output;
 end;
 
-function getDeviceInfo: string;
-begin
-  Result := procStart('ideviceinfo').Output;
-end;
-
 function getDeviceInfoByKey(const key: string): string;
-var
-  sList: TStringList;
-  s: string;
-
 begin
-  Result := '';
-
-  sList := TStringList.Create;
-
-  with sList do
-    try
-      sList.Text := getDeviceInfo;
-      sList.Delimiter := LineEnding;
-
-      for s in sList do
-        if s.StartsWith(key) then
-          Result := StringReplace(s, key + ': ', '', [rfReplaceAll]);
-    finally
-      FreeAndNil(sList);
-    end;
+  Result := Trim(procStart('ideviceinfo', '-k' + LineEnding + key).Output);
 end;
 
 function getDeviceCycleCount: string;
