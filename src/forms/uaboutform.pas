@@ -13,6 +13,7 @@ type
 
   TfrmAbout = class(TForm)
     imgLogo: TImage;
+    lblAppName: TLabel;
     lblHomepage: TLabel;
     lblGithub: TLabel;
     lblLicense: TLabel;
