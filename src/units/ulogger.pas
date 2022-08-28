@@ -14,7 +14,7 @@ implementation
 procedure addLog(const message: string);
 begin
   ShowMessage(message);
-  // WriteLn(message);
+  WriteLn(message);
 end;
 
 end.
