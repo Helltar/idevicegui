@@ -14,6 +14,28 @@ Download
 Installation
 ------------
 
+Dependencies:
+
+**Arch Linux**:
+
+```
+sudo pacman -S ifuse qt5pas
+```
+
+**Fedora**:
+
+```
+sudo dnf install ifuse qt5pas
+```
+
+**Ubuntu**:
+
+```
+sudo apt install ifuse libqt5pas1
+```
+
+Done, unzip and run:
+
 ```
 tar -xvzf idevicegui-1.0.0.tar.gz && ./idevicegui
 ```
