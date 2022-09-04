@@ -1,7 +1,7 @@
 object frmSettings: TfrmSettings
-  Left = 631
+  Left = 907
   Height = 246
-  Top = 413
+  Top = 395
   Width = 504
   AutoSize = True
   Caption = 'Settings'
@@ -31,9 +31,10 @@ object frmSettings: TfrmSettings
     Left = 24
     Height = 33
     Top = 67
-    Width = 395
+    Width = 413
     Anchors = [akTop, akLeft, akRight]
-    BorderSpacing.Around = 24
+    BorderSpacing.Left = 24
+    BorderSpacing.Right = 6
     Enabled = False
     TabOrder = 0
   end
@@ -50,7 +51,7 @@ object frmSettings: TfrmSettings
     Width = 37
     Anchors = [akTop, akRight]
     AutoSize = True
-    BorderSpacing.Around = 24
+    BorderSpacing.Right = 24
     Caption = '&...'
     OnClick = btnOpenDirClick
     TabOrder = 1
