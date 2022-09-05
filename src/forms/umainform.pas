@@ -6,7 +6,7 @@ interface
 
 uses
   SysUtils, Forms, Graphics, Dialogs, StdCtrls, ExtCtrls, ActnList,
-  LCLIntf, Buttons, Menus,
+  LCLIntf, Buttons, Menus, Clipbrd,
   //------
   uConfig, Classes;
 
@@ -48,6 +48,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure lblSerialNumberDataClick(Sender: TObject);
     procedure miSettingsClick(Sender: TObject);
     procedure miAboutClick(Sender: TObject);
     procedure miExitClick(Sender: TObject);
@@ -105,6 +106,11 @@ procedure TfrmMain.FormShow(Sender: TObject);
 begin
   Constraints.MinHeight := Height;
   Constraints.MinWidth := Width;
+end;
+
+procedure TfrmMain.lblSerialNumberDataClick(Sender: TObject);
+begin
+  Clipboard.AsText := lblSerialNumberData.Caption;
 end;
 
 procedure TfrmMain.miSettingsClick(Sender: TObject);

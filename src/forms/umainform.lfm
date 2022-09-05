@@ -1,12 +1,12 @@
 object frmMain: TfrmMain
   Left = 770
-  Height = 545
+  Height = 600
   Top = 252
-  Width = 425
+  Width = 450
   AutoSize = True
   Caption = 'idevicegui'
-  ClientHeight = 545
-  ClientWidth = 425
+  ClientHeight = 600
+  ClientWidth = 450
   Constraints.MinWidth = 400
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
@@ -25,7 +25,7 @@ object frmMain: TfrmMain
     Left = 24
     Height = 270
     Top = 51
-    Width = 377
+    Width = 402
     Anchors = [akTop, akLeft, akRight]
     AutoSize = True
     BorderSpacing.Left = 24
@@ -33,7 +33,7 @@ object frmMain: TfrmMain
     BorderSpacing.Right = 24
     Caption = 'not plugged'
     ClientHeight = 239
-    ClientWidth = 373
+    ClientWidth = 398
     Enabled = False
     TabOrder = 0
     object lblModelNumber: TLabel
@@ -108,7 +108,7 @@ object frmMain: TfrmMain
       AnchorSideTop.Control = gbInfo
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 348
+      Left = 373
       Height = 1
       Top = 24
       Width = 1
@@ -121,7 +121,7 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 348
+      Left = 373
       Height = 1
       Top = 49
       Width = 1
@@ -134,20 +134,25 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 348
+      Cursor = crHandPoint
+      Left = 373
       Height = 1
+      Hint = 'Copy to clipboard'
       Top = 74
       Width = 1
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
       ParentColor = False
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = lblSerialNumberDataClick
     end
     object lblCycleCountData: TLabel
       AnchorSideTop.Control = lblSerialNumberData
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 348
+      Left = 373
       Height = 1
       Top = 99
       Width = 1
@@ -160,7 +165,7 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 348
+      Left = 373
       Height = 1
       Top = 124
       Width = 1
@@ -178,14 +183,14 @@ object frmMain: TfrmMain
     Left = 24
     Height = 33
     Top = 345
-    Width = 377
+    Width = 402
     Anchors = [akTop, akLeft, akRight]
     AutoSize = True
     BorderSpacing.Bottom = 48
     BorderSpacing.Around = 24
     BevelOuter = bvNone
     ClientHeight = 33
-    ClientWidth = 377
+    ClientWidth = 402
     TabOrder = 1
     object btnMount: TButton
       AnchorSideLeft.Control = pnlButtons
@@ -209,7 +214,7 @@ object frmMain: TfrmMain
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = pnlButtons
       AnchorSideBottom.Side = asrBottom
-      Left = 293
+      Left = 318
       Height = 33
       Top = 0
       Width = 84
@@ -225,7 +230,7 @@ object frmMain: TfrmMain
     AnchorSideTop.Control = Owner
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
-    Left = 363
+    Left = 388
     Height = 27
     Hint = 'Menu'
     Top = 12
@@ -277,7 +282,7 @@ object frmMain: TfrmMain
     TabOrder = 2
   end
   object actlMain: TActionList
-    Left = 48
+    Left = 96
     Top = 408
     object actMount: TAction
       Caption = '&Mount Photo Directory'
@@ -293,11 +298,11 @@ object frmMain: TfrmMain
   end
   object tmMain: TTimer
     OnTimer = tmMainTimer
-    Left = 168
+    Left = 208
     Top = 408
   end
   object pmMain: TPopupMenu
-    Left = 280
+    Left = 312
     Top = 408
     object miSettings: TMenuItem
       Caption = '&Settings'
