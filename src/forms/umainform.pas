@@ -5,9 +5,10 @@ unit uMainForm;
 interface
 
 uses
-  SysUtils, Forms, Graphics, Dialogs, StdCtrls, ExtCtrls, ActnList, LCLIntf, Buttons, Menus,
+  SysUtils, Forms, Graphics, Dialogs, StdCtrls, ExtCtrls, ActnList,
+  LCLIntf, Buttons, Menus,
   //------
-  uConfig;
+  uConfig, Classes;
 
 type
 
@@ -43,6 +44,7 @@ type
     procedure actUmountExecute(Sender: TObject);
     procedure actUmountUpdate(Sender: TObject);
     procedure bitBtnMenuClick(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -52,6 +54,8 @@ type
     procedure tmMainTimer(Sender: TObject);
   private
     mountDir: string;
+    function umount(): boolean;
+    function isDCIMMount(): boolean;
     procedure updateControls();
   public
     config: TConfig;
@@ -143,26 +147,48 @@ begin
   pmMain.PopUp;
 end;
 
+procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+begin
+  CanClose := True;
+
+  if isDCIMMount() then
+    CanClose := umount();
+end;
+
 procedure TfrmMain.actMountUpdate(Sender: TObject);
 begin
-  actMount.Enabled := isDevicePlugged() and (mountDir.IsEmpty);
+  actMount.Enabled := isDevicePlugged() and not isDCIMMount();
+end;
+
+procedure TfrmMain.actUmountExecute(Sender: TObject);
+begin
+  umount();
 end;
 
 procedure TfrmMain.actMountExecute(Sender: TObject);
 begin
   mountDir := mount(config.mountPoint);
 
-  if not mountDir.IsEmpty then
+  if isDCIMMount() then
     OpenDocument(mountDir + DirectorySeparator + DIR_DCIM);
 end;
 
-procedure TfrmMain.actUmountExecute(Sender: TObject);
+function TfrmMain.umount: boolean;
 begin
-  if umount(mountDir) then
-  begin
-    RemoveDir(mountDir);
-    mountDir := '';
-  end;
+  Result := False;
+
+  if isDCIMMount() then
+    if uUtils.umount(mountDir) then
+    begin
+      RemoveDir(mountDir);
+      mountDir := '';
+      Result := True;
+    end;
+end;
+
+function TfrmMain.isDCIMMount: boolean;
+begin
+  Result := not mountDir.IsEmpty;
 end;
 
 procedure TfrmMain.updateControls;
@@ -193,8 +219,8 @@ begin
       lblCycleCountData.Caption := getDeviceCycleCount();
 
     if lblSpaceUsedData.Caption = '' then
-      lblSpaceUsedData.Caption :=
-        formatByteSize(StrToInt64(getDiskUsage(TOTAL_DATA_CAPACITY))) + ' / ' + formatDiskCapacity(StrToInt64(getDiskUsage(TOTAL_DISK_CAPACITY)));
+      lblSpaceUsedData.Caption := formatByteSize(StrToInt64(getDiskUsage(TOTAL_DATA_CAPACITY))) +
+        ' / ' + formatDiskCapacity(StrToInt64(getDiskUsage(TOTAL_DISK_CAPACITY)));
   end
   else
   if gbInfo.Enabled then

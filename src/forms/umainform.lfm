@@ -8,6 +8,7 @@ object frmMain: TfrmMain
   ClientHeight = 545
   ClientWidth = 425
   Constraints.MinWidth = 400
+  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
