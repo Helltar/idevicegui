@@ -31,10 +31,10 @@ object frmSettings: TfrmSettings
     Left = 24
     Height = 33
     Top = 67
-    Width = 413
+    Width = 407
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 24
-    BorderSpacing.Right = 6
+    BorderSpacing.Right = 12
     Enabled = False
     TabOrder = 0
   end
