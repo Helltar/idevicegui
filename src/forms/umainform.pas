@@ -5,10 +5,10 @@ unit uMainForm;
 interface
 
 uses
-  SysUtils, Forms, Graphics, Dialogs, StdCtrls, ExtCtrls, ActnList,
-  LCLIntf, Buttons, Menus, Clipbrd,
+  Classes, SysUtils, Forms, Graphics, Dialogs, StdCtrls,
+  ExtCtrls, ActnList, LCLIntf, Buttons, Menus, Clipbrd,
   //------
-  uConfig, Classes;
+  uConfig;
 
 type
 
