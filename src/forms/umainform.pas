@@ -225,8 +225,9 @@ begin
       lblCycleCountData.Caption := getDeviceCycleCount();
 
     if lblSpaceUsedData.Caption = '' then
-      lblSpaceUsedData.Caption := formatByteSize(StrToInt64(getDiskUsage(TOTAL_DATA_CAPACITY))) +
-        ' / ' + formatDiskCapacity(StrToInt64(getDiskUsage(TOTAL_DISK_CAPACITY)));
+      lblSpaceUsedData.Caption :=
+        formatByteSize(getDiskUsage(TOTAL_DISK_CAPACITY) - getDiskUsage(TOTAL_DATA_AVAILABLE)) + ' / ' +
+        formatDiskCapacity(getDiskUsage(TOTAL_DISK_CAPACITY));
   end
   else
   if gbInfo.Enabled then

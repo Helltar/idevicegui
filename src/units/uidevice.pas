@@ -15,7 +15,7 @@ const
 function getDeviceCycleCount(): string;
 function getDeviceInfoByKey(const key: string): string;
 function getDeviceName(): string;
-function getDiskUsage(const dType: string): string;
+function getDiskUsage(const dType: string): int64;
 function isDevicePlugged(): boolean;
 
 implementation
@@ -23,26 +23,15 @@ implementation
 uses
   uUtils;
 
-function getDiskUsage(const dType: string): string;
+function getDiskUsage(const dType: string): int64;
 begin
-  Result := '0';
-
-  with TStringList.Create do
-    try
-      Text := Trim(procStart('ideviceinfo', '-q' + LineEnding + 'com.apple.disk_usage.factory').Output);
-
-      with TRegExpr.Create do
-        try
-          Expression := dType + ': (.*?)' + LineEnding;
-
-          if Exec(Text) then
-            Result := Match[1];
-        finally
-          Free;
-        end;
-    finally
-      Free;
-    end;
+  Result :=
+    StrToInt64(
+    Trim(
+    procStart(
+    'ideviceinfo', '-q' + LineEnding + 'com.apple.disk_usage.factory' + LineEnding + '-k' + LineEnding + dType)
+    .Output)
+    );
 end;
 
 function isDevicePlugged: boolean;
@@ -62,7 +51,7 @@ end;
 
 function getDeviceCycleCount: string;
 begin
-  Result := '';
+  Result := '-1';
 
   with TStringList.Create do
     try

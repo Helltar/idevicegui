@@ -13,7 +13,7 @@ object frmMain: TfrmMain
   OnDestroy = FormDestroy
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '2.2.2.0'
+  LCLVersion = '2.2.4.0'
   object gbInfo: TGroupBox
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = bitBtnMenu
@@ -23,7 +23,7 @@ object frmMain: TfrmMain
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 24
-    Height = 270
+    Height = 288
     Top = 51
     Width = 402
     Anchors = [akTop, akLeft, akRight]
@@ -32,7 +32,7 @@ object frmMain: TfrmMain
     BorderSpacing.Top = 12
     BorderSpacing.Right = 24
     Caption = 'not plugged'
-    ClientHeight = 239
+    ClientHeight = 254
     ClientWidth = 398
     Enabled = False
     TabOrder = 0
@@ -42,7 +42,7 @@ object frmMain: TfrmMain
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
       Left = 24
-      Height = 19
+      Height = 22
       Top = 24
       Width = 45
       BorderSpacing.Around = 24
@@ -56,9 +56,9 @@ object frmMain: TfrmMain
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
       Left = 24
-      Height = 19
-      Top = 67
-      Width = 122
+      Height = 22
+      Top = 70
+      Width = 123
       BorderSpacing.Around = 24
       Caption = 'Software Version'
       ParentColor = False
@@ -70,8 +70,8 @@ object frmMain: TfrmMain
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
       Left = 24
-      Height = 19
-      Top = 110
+      Height = 22
+      Top = 116
       Width = 102
       BorderSpacing.Around = 24
       Caption = 'Serial Number'
@@ -84,9 +84,9 @@ object frmMain: TfrmMain
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
       Left = 24
-      Height = 19
-      Top = 153
-      Width = 85
+      Height = 22
+      Top = 162
+      Width = 86
       BorderSpacing.Around = 24
       Caption = 'Cycle Count'
       ParentColor = False
@@ -96,8 +96,8 @@ object frmMain: TfrmMain
       AnchorSideTop.Control = lblCycleCount
       AnchorSideTop.Side = asrBottom
       Left = 24
-      Height = 19
-      Top = 196
+      Height = 22
+      Top = 208
       Width = 85
       BorderSpacing.Left = 24
       BorderSpacing.Bottom = 24
@@ -181,15 +181,15 @@ object frmMain: TfrmMain
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 24
-    Height = 33
-    Top = 345
+    Height = 36
+    Top = 363
     Width = 402
     Anchors = [akTop, akLeft, akRight]
     AutoSize = True
     BorderSpacing.Bottom = 48
     BorderSpacing.Around = 24
     BevelOuter = bvNone
-    ClientHeight = 33
+    ClientHeight = 36
     ClientWidth = 402
     TabOrder = 1
     object btnMount: TButton
@@ -198,7 +198,7 @@ object frmMain: TfrmMain
       AnchorSideBottom.Control = pnlButtons
       AnchorSideBottom.Side = asrBottom
       Left = 0
-      Height = 33
+      Height = 36
       Top = 0
       Width = 188
       Action = actMount
@@ -215,7 +215,7 @@ object frmMain: TfrmMain
       AnchorSideBottom.Control = pnlButtons
       AnchorSideBottom.Side = asrBottom
       Left = 318
-      Height = 33
+      Height = 36
       Top = 0
       Width = 84
       Action = actUmount
