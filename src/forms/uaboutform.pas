@@ -5,7 +5,7 @@ unit uAboutForm;
 interface
 
 uses
-  Forms, ExtCtrls, StdCtrls, LCLIntf;
+  Forms, ExtCtrls, StdCtrls, LCLIntf, Classes;
 
 type
 
@@ -17,6 +17,7 @@ type
     lblHomepage: TLabel;
     lblGithub: TLabel;
     lblLicense: TLabel;
+    procedure FormShow(Sender: TObject);
     procedure lblHomepageClick(Sender: TObject);
     procedure lblGithubClick(Sender: TObject);
     procedure lblLicenseClick(Sender: TObject);
@@ -31,6 +32,12 @@ implementation
 procedure TfrmAbout.lblHomepageClick(Sender: TObject);
 begin
   OpenURL('https://helltar.com');
+end;
+
+procedure TfrmAbout.FormShow(Sender: TObject);
+begin
+  Constraints.MinHeight := Height;
+  Constraints.MinWidth := Width;
 end;
 
 procedure TfrmAbout.lblGithubClick(Sender: TObject);
