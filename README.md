@@ -9,7 +9,7 @@
 Download
 --------
 
-- [idevicegui-1.1.0.tar.gz](https://github.com/Helltar/idevicegui/releases/download/v1.1.0/idevicegui-1.1.0.tar.gz) (930 KB)
+- [idevicegui-1.1.0.tar.gz](https://github.com/Helltar/idevicegui/releases/download/v1.1.0/idevicegui-1.1.0.tar.gz) (942 KB)
 
 Installation
 ------------
