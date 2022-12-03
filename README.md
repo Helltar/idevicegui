@@ -14,6 +14,8 @@ Download
 Installation
 ------------
 
+NOTE: **Arch** users can just install **idevicegui** from the **AUR**: ([idevicegui](https://aur.archlinux.org/packages/idevicegui)) and skip next section.
+
 Dependencies:
 
 **Arch Linux**:
