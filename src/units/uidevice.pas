@@ -24,19 +24,18 @@ uses
   uUtils;
 
 function getDiskUsage(const dType: string): int64;
+var
+  pOutput: string;
+
 begin
-  Result :=
-    StrToInt64(
-    Trim(
-    procStart(
-    'ideviceinfo', '-q' + LineEnding + 'com.apple.disk_usage.factory' + LineEnding + '-k' + LineEnding + dType)
-    .Output)
-    );
+  Result := 0;
+  pOutput := procStart('ideviceinfo', '-q' + LineEnding + 'com.apple.disk_usage.factory' + LineEnding + '-k' + LineEnding + dType).Output.Trim;
+  TryStrToInt64(pOutput, Result);
 end;
 
 function isDevicePlugged: boolean;
 begin
-  Result := procStart('idevice_id').ExitStatus = 0;
+  Result := procStart('idevicename').ExitStatus = 0;
 end;
 
 function getDeviceName: string;
