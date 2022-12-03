@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, ActnList, LCLIntf, Buttons, Menus, Clipbrd,
+  ExtCtrls, ActnList, LCLIntf, Buttons, Menus, Clipbrd, ATButtons,
   //------
   uConfig;
 
@@ -15,12 +15,12 @@ type
   { TfrmMain }
 
   TfrmMain = class(TForm)
-    actMount: TAction;
-    actUmount: TAction;
+    actUpdateButtons: TAction;
     actlMain: TActionList;
-    bitBtnMenu: TBitBtn;
-    btnMount: TButton;
-    btnUmount: TButton;
+    actMount: TAction;
+    btnMount: TATButton;
+    btnUmount: TATButton;
+    btnMenu: TATButton;
     gbInfo: TGroupBox;
     lblModelNumberData: TLabel;
     lbliOSVersionData: TLabel;
@@ -36,14 +36,12 @@ type
     miAbout: TMenuItem;
     miSettings: TMenuItem;
     miExit: TMenuItem;
-    pnlButtons: TPanel;
     pmMain: TPopupMenu;
     tmMain: TTimer;
-    procedure actMountExecute(Sender: TObject);
-    procedure actMountUpdate(Sender: TObject);
-    procedure actUmountExecute(Sender: TObject);
-    procedure actUmountUpdate(Sender: TObject);
-    procedure bitBtnMenuClick(Sender: TObject);
+    procedure actUpdateButtonsUpdate(Sender: TObject);
+    procedure btnMenuClick(Sender: TObject);
+    procedure btnMountClick(Sender: TObject);
+    procedure btnUmountClick(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -143,14 +141,28 @@ begin
   updateControls();
 end;
 
-procedure TfrmMain.actUmountUpdate(Sender: TObject);
-begin
-  actUmount.Enabled := not mountDir.IsEmpty;
-end;
-
-procedure TfrmMain.bitBtnMenuClick(Sender: TObject);
+procedure TfrmMain.btnMenuClick(Sender: TObject);
 begin
   pmMain.PopUp;
+end;
+
+procedure TfrmMain.actUpdateButtonsUpdate(Sender: TObject);
+begin
+  btnMount.Enabled := isDevicePlugged() and not isDCIMMount();
+  btnUmount.Enabled := not mountDir.IsEmpty;
+end;
+
+procedure TfrmMain.btnMountClick(Sender: TObject);
+begin
+  mountDir := mount(config.mountPoint);
+
+  if isDCIMMount() then
+    OpenDocument(mountDir + DirectorySeparator + DIR_DCIM);
+end;
+
+procedure TfrmMain.btnUmountClick(Sender: TObject);
+begin
+  umount();
 end;
 
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: boolean);
@@ -159,24 +171,6 @@ begin
 
   if isDCIMMount() then
     CanClose := umount();
-end;
-
-procedure TfrmMain.actMountUpdate(Sender: TObject);
-begin
-  actMount.Enabled := isDevicePlugged() and not isDCIMMount();
-end;
-
-procedure TfrmMain.actUmountExecute(Sender: TObject);
-begin
-  umount();
-end;
-
-procedure TfrmMain.actMountExecute(Sender: TObject);
-begin
-  mountDir := mount(config.mountPoint);
-
-  if isDCIMMount() then
-    OpenDocument(mountDir + DirectorySeparator + DIR_DCIM);
 end;
 
 function TfrmMain.umount: boolean;

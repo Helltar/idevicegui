@@ -17,8 +17,8 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <MajorVersionNr Value="1"/>
-      <RevisionNr Value="1"/>
-      <StringTable CompanyName="helltar.com" FileDescription="A simple GUI for libimobiledevice" LegalCopyright="2022 Helltar" OriginalFilename="idevicegui" ProductName="idevicegui" ProductVersion="1.0"/>
+      <MinorVersionNr Value="1"/>
+      <StringTable CompanyName="helltar.com" FileDescription="A simple GUI for libimobiledevice" LegalCopyright="2022 Helltar" OriginalFilename="idevicegui" ProductName="idevicegui" ProductVersion="1.1"/>
     </VersionInfo>
     <BuildModes>
       <Item Name="Default" Default="True"/>
@@ -104,6 +104,9 @@
       <FormatVersion Value="2"/>
     </RunParams>
     <RequiredPackages>
+      <Item>
+        <PackageName Value="atflatcontrols_package"/>
+      </Item>
       <Item>
         <PackageName Value="LCL"/>
       </Item>

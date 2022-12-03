@@ -3,13 +3,13 @@
     <br><br>
     idevicegui
     <br><br>
-    <img src="https://helltar.com/projects/idevicegui/screenshots/screenshot_28082022_193141-1.png" alt="main_window"/>
+    <img src="https://helltar.com/projects/idevicegui/screenshots/screenshot_03122022_235644.png" alt="main_window"/>
 </h3>
 
 Download
 --------
 
-- [idevicegui-1.0.0.tar.gz](https://github.com/Helltar/idevicegui/releases/download/v1.0.0/idevicegui-1.0.0.tar.gz) (930 KB)
+- [idevicegui-1.1.0.tar.gz](https://github.com/Helltar/idevicegui/releases/download/v1.1.0/idevicegui-1.1.0.tar.gz) (930 KB)
 
 Installation
 ------------
@@ -25,17 +25,17 @@ sudo pacman -S ifuse qt5pas
 **Fedora**:
 
 ```
-sudo dnf install ifuse qt5pas
+sudo dnf install ifuse usbmuxd qt5pas
 ```
 
 **Ubuntu**:
 
 ```
-sudo apt install ifuse libqt5pas1
+sudo apt install ifuse usbmuxd libimobiledevice6 libimobiledevice-utils libqt5pas1
 ```
 
 Done, unzip and run:
 
 ```
-tar -xvzf idevicegui-1.0.0.tar.gz && ./idevicegui
+tar -xvf idevicegui-1.1.0.tar.gz && ./idevicegui
 ```

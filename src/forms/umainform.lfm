@@ -1,12 +1,14 @@
 object frmMain: TfrmMain
-  Left = 648
-  Height = 501
-  Top = 270
-  Width = 443
+  Left = 685
+  Height = 171
+  Top = 415
+  Width = 400
+  Action = actUpdateButtons
   AutoSize = True
   Caption = 'idevicegui'
-  ClientHeight = 501
-  ClientWidth = 443
+  ClientHeight = 171
+  ClientWidth = 400
+  Color = 3355443
   Constraints.MinWidth = 400
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
@@ -16,25 +18,30 @@ object frmMain: TfrmMain
   LCLVersion = '2.2.4.0'
   object gbInfo: TGroupBox
     AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = bitBtnMenu
+    AnchorSideTop.Control = btnMenu
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
-    AnchorSideBottom.Control = Owner
-    AnchorSideBottom.Side = asrBottom
+    AnchorSideBottom.Control = btnMount
     Left = 24
-    Height = 288
-    Top = 51
-    Width = 395
-    Anchors = [akTop, akLeft, akRight]
+    Height = 39
+    Top = 48
+    Width = 352
+    Anchors = [akTop, akLeft, akRight, akBottom]
     AutoSize = True
     BorderSpacing.Left = 24
     BorderSpacing.Top = 12
     BorderSpacing.Right = 24
     Caption = 'not plugged'
-    ClientHeight = 254
-    ClientWidth = 391
+    ClientHeight = 5
+    ClientWidth = 348
+    Color = 3355443
     Enabled = False
+    Font.Color = 16316664
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
     TabOrder = 0
     object lblModelNumber: TLabel
       AnchorSideLeft.Control = gbInfo
@@ -47,7 +54,9 @@ object frmMain: TfrmMain
       Width = 45
       BorderSpacing.Around = 24
       Caption = 'Model'
+      Font.Color = clSilver
       ParentColor = False
+      ParentFont = False
     end
     object lbliOSVersion: TLabel
       AnchorSideLeft.Control = gbInfo
@@ -61,7 +70,9 @@ object frmMain: TfrmMain
       Width = 123
       BorderSpacing.Around = 24
       Caption = 'Software Version'
+      Font.Color = clSilver
       ParentColor = False
+      ParentFont = False
     end
     object lblSerialNumber: TLabel
       AnchorSideLeft.Control = gbInfo
@@ -75,7 +86,9 @@ object frmMain: TfrmMain
       Width = 102
       BorderSpacing.Around = 24
       Caption = 'Serial Number'
+      Font.Color = clSilver
       ParentColor = False
+      ParentFont = False
     end
     object lblCycleCount: TLabel
       AnchorSideLeft.Control = gbInfo
@@ -86,10 +99,12 @@ object frmMain: TfrmMain
       Left = 24
       Height = 22
       Top = 162
-      Width = 86
+      Width = 140
       BorderSpacing.Around = 24
-      Caption = 'Cycle Count'
+      Caption = 'Battery Cycle Count'
+      Font.Color = clSilver
       ParentColor = False
+      ParentFont = False
     end
     object lblSpaceUsed: TLabel
       AnchorSideLeft.Control = gbInfo
@@ -102,32 +117,38 @@ object frmMain: TfrmMain
       BorderSpacing.Left = 24
       BorderSpacing.Bottom = 24
       Caption = 'Space Used'
+      Font.Color = clSilver
       ParentColor = False
+      ParentFont = False
     end
     object lblModelNumberData: TLabel
       AnchorSideTop.Control = gbInfo
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 366
+      Left = 323
       Height = 1
       Top = 24
       Width = 1
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
+      Font.Color = clSilver
       ParentColor = False
+      ParentFont = False
     end
     object lbliOSVersionData: TLabel
       AnchorSideTop.Control = lblModelNumberData
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 366
+      Left = 323
       Height = 1
       Top = 49
       Width = 1
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
+      Font.Color = clSilver
       ParentColor = False
+      ParentFont = False
     end
     object lblSerialNumberData: TLabel
       AnchorSideTop.Control = lbliOSVersionData
@@ -135,14 +156,16 @@ object frmMain: TfrmMain
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
       Cursor = crHandPoint
-      Left = 366
+      Left = 323
       Height = 1
       Hint = 'Copy to clipboard'
       Top = 74
       Width = 1
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
+      Font.Color = clSilver
       ParentColor = False
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
       OnClick = lblSerialNumberDataClick
@@ -152,158 +175,95 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 366
+      Left = 323
       Height = 1
       Top = 99
       Width = 1
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
+      Font.Color = clSilver
       ParentColor = False
+      ParentFont = False
     end
     object lblSpaceUsedData: TLabel
       AnchorSideTop.Control = lblCycleCountData
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 366
+      Left = 323
       Height = 1
       Top = 124
       Width = 1
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
+      Font.Color = clSilver
       ParentColor = False
+      ParentFont = False
     end
   end
-  object pnlButtons: TPanel
+  object btnMount: TATButton
     AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = gbInfo
-    AnchorSideTop.Side = asrBottom
-    AnchorSideRight.Control = Owner
-    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
     Left = 24
     Height = 36
-    Top = 363
-    Width = 395
-    Anchors = [akTop, akLeft, akRight]
-    AutoSize = True
-    BorderSpacing.Bottom = 48
+    Top = 111
+    Width = 162
+    Anchors = [akLeft, akBottom]
     BorderSpacing.Around = 24
-    BevelOuter = bvNone
-    ClientHeight = 36
-    ClientWidth = 395
-    TabOrder = 1
-    object btnMount: TButton
-      AnchorSideLeft.Control = pnlButtons
-      AnchorSideTop.Control = pnlButtons
-      AnchorSideBottom.Control = pnlButtons
-      AnchorSideBottom.Side = asrBottom
-      Left = 0
-      Height = 36
-      Top = 0
-      Width = 188
-      Action = actMount
-      AutoSize = True
-      BorderSpacing.InnerBorder = 2
-      TabOrder = 0
-    end
-    object btnUmount: TButton
-      AnchorSideLeft.Control = pnlButtons
-      AnchorSideLeft.Side = asrCenter
-      AnchorSideTop.Control = pnlButtons
-      AnchorSideRight.Control = pnlButtons
-      AnchorSideRight.Side = asrBottom
-      AnchorSideBottom.Control = pnlButtons
-      AnchorSideBottom.Side = asrBottom
-      Left = 311
-      Height = 36
-      Top = 0
-      Width = 84
-      Action = actUmount
-      Anchors = [akTop, akRight]
-      AutoSize = True
-      BorderSpacing.InnerBorder = 2
-      TabOrder = 1
-    end
+    Caption = 'Mount Photo Directory'
+    TabOrder = 3
+    Focusable = False
+    OnClick = btnMountClick
   end
-  object bitBtnMenu: TBitBtn
-    AnchorSideLeft.Control = Owner
+  object btnUmount: TATButton
+    AnchorSideTop.Control = btnMount
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 214
+    Height = 36
+    Top = 111
+    Width = 162
+    Anchors = [akTop, akRight]
+    BorderSpacing.Around = 24
+    Caption = 'Umount'
+    TabOrder = 2
+    Focusable = False
+    OnClick = btnUmountClick
+  end
+  object btnMenu: TATButton
     AnchorSideTop.Control = Owner
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
-    Left = 381
-    Height = 27
+    Cursor = crHandPoint
+    Left = 352
+    Height = 24
     Hint = 'Menu'
     Top = 12
-    Width = 38
+    Width = 24
     Anchors = [akTop, akRight]
-    AutoSize = True
     BorderSpacing.Top = 12
     BorderSpacing.Right = 24
-    Glyph.Data = {
-      36040000424D3604000000000000360000002800000010000000100000000100
-      2000000000000004000064000000640000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000004444
-      44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-      44FF444444FF444444FF444444FF444444FF444444FF00000000000000004444
-      44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-      44FF444444FF444444FF444444FF444444FF444444FF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000004444
-      44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-      44FF444444FF444444FF444444FF444444FF444444FF00000000000000004444
-      44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-      44FF444444FF444444FF444444FF444444FF444444FF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000004444
-      44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-      44FF444444FF444444FF444444FF444444FF444444FF00000000000000004444
-      44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-      44FF444444FF444444FF444444FF444444FF444444FF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000004444
-      44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-      44FF444444FF444444FF444444FF444444FF444444FF00000000000000004444
-      44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-      44FF444444FF444444FF444444FF444444FF444444FF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000
-    }
-    OnClick = bitBtnMenuClick
-    ParentShowHint = False
-    PopupMenu = pmMain
+    Caption = 'Button'
+    TabOrder = 1
     ShowHint = True
-    TabOrder = 2
-  end
-  object actlMain: TActionList
-    Left = 336
-    Top = 96
-    object actMount: TAction
-      Caption = '&Mount Photo Directory'
-      Enabled = False
-      OnExecute = actMountExecute
-      OnUpdate = actMountUpdate
-    end
-    object actUmount: TAction
-      Caption = '&Umount'
-      OnExecute = actUmountExecute
-      OnUpdate = actUmountUpdate
-    end
+    ParentShowHint = False
+    Focusable = False
+    Flat = True
+    Arrow = True
+    OnClick = btnMenuClick
   end
   object tmMain: TTimer
     OnTimer = tmMainTimer
-    Left = 336
-    Top = 176
+    Left = 328
+    Top = 216
   end
   object pmMain: TPopupMenu
-    Left = 336
-    Top = 264
+    Left = 328
+    Top = 304
     object miSettings: TMenuItem
       Caption = '&Settings'
       OnClick = miSettingsClick
@@ -318,6 +278,16 @@ object frmMain: TfrmMain
     object miExit: TMenuItem
       Caption = '&Quit'
       OnClick = miExitClick
+    end
+  end
+  object actlMain: TActionList
+    Left = 328
+    Top = 128
+    object actUpdateButtons: TAction
+      Caption = 'idevicegui'
+      DisableIfNoHandler = False
+      OnUpdate = actUpdateButtonsUpdate
+      Visible = False
     end
   end
 end
