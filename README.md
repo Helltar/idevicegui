@@ -9,7 +9,7 @@
 Download
 --------
 
-- [idevicegui-1.1.0.tar.gz](https://github.com/Helltar/idevicegui/releases/download/v1.1.0/idevicegui-1.1.0.tar.gz) (942 KB)
+- [idevicegui-1.1.2.tar.gz](https://github.com/Helltar/idevicegui/releases/download/v1.1.2/idevicegui-1.1.2.tar.gz) (942 KB)
 
 Installation
 ------------
@@ -39,5 +39,5 @@ sudo apt install ifuse usbmuxd libimobiledevice6 libimobiledevice-utils libqt5pa
 Done, unzip and run:
 
 ```
-tar -xvf idevicegui-1.1.0.tar.gz && ./idevicegui
+tar -xvf idevicegui-1.1.2.tar.gz && ./idevicegui
 ```
