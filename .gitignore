@@ -5,6 +5,7 @@
 *.sh
 *.xcf
 
+aur/
 backup/
 lib/
 debug/
