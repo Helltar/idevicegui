@@ -18,6 +18,7 @@
       <UseVersionInfo Value="True"/>
       <MajorVersionNr Value="1"/>
       <MinorVersionNr Value="1"/>
+      <RevisionNr Value="2"/>
       <StringTable CompanyName="helltar.com" FileDescription="A simple GUI for libimobiledevice" LegalCopyright="2022 Helltar" OriginalFilename="idevicegui" ProductName="idevicegui" ProductVersion="1.1"/>
     </VersionInfo>
     <BuildModes>

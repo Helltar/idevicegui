@@ -5,10 +5,9 @@ unit uMainForm;
 interface
 
 uses
-  Classes, SysUtils, Forms, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, ActnList, LCLIntf, Buttons, Menus, Clipbrd, ATButtons,
-  //------
-  uConfig;
+  SysUtils, Forms, Dialogs, StdCtrls, ExtCtrls,
+  ActnList, LCLIntf, Menus, Clipbrd,
+  ATButtons, uConfig;
 
 type
 
@@ -45,7 +44,6 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure lblSerialNumberDataClick(Sender: TObject);
     procedure miSettingsClick(Sender: TObject);
     procedure miAboutClick(Sender: TObject);
@@ -66,8 +64,7 @@ var
 implementation
 
 uses
-  uSettingsForm, uAboutForm,
-  uUtils, uidevice;
+  uSettingsForm, uAboutForm, uUtils, uidevice;
 
 resourcestring
   RS_GB_INFO_CAPTION = 'not plugged';
@@ -98,12 +95,6 @@ end;
 procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
   FreeAndNil(config);
-end;
-
-procedure TfrmMain.FormShow(Sender: TObject);
-begin
-  Constraints.MinHeight := Height;
-  Constraints.MinWidth := Width;
 end;
 
 procedure TfrmMain.lblSerialNumberDataClick(Sender: TObject);
@@ -192,47 +183,32 @@ begin
 end;
 
 procedure TfrmMain.updateControls;
-var
-  deviceName: string;
-
 begin
   if isDevicePlugged() then
   begin
     if not gbInfo.Enabled then
+    begin
       gbInfo.Enabled := True;
-
-    deviceName := getDeviceName();
-
-    if gbInfo.Caption <> deviceName then
-      gbInfo.Caption := deviceName;
-
-    if lblModelNumberData.Caption = '' then
-      lblModelNumberData.Caption := getDeviceInfoByKey('RegulatoryModelNumber');
-
-    if lbliOSVersionData.Caption = '' then
-      lbliOSVersionData.Caption := getDeviceInfoByKey('ProductVersion');
-
-    if lblSerialNumberData.Caption = '' then
-      lblSerialNumberData.Caption := getDeviceInfoByKey('SerialNumber'); // 'DX0XXXXXX000'
-
-    if lblCycleCountData.Caption = '' then
+      gbInfo.Caption := getDeviceName();
       lblCycleCountData.Caption := getDeviceCycleCount();
-
-    if lblSpaceUsedData.Caption = '' then
+      lbliOSVersionData.Caption := getDeviceInfoByKey('ProductVersion');
+      lblModelNumberData.Caption := getDeviceInfoByKey('RegulatoryModelNumber');
+      lblSerialNumberData.Caption := getDeviceInfoByKey('SerialNumber');
       lblSpaceUsedData.Caption :=
         formatByteSize(getDiskUsage(TOTAL_DISK_CAPACITY) - getDiskUsage(TOTAL_DATA_AVAILABLE)) + ' / ' +
         formatDiskCapacity(getDiskUsage(TOTAL_DISK_CAPACITY));
+    end;
   end
   else
   if gbInfo.Enabled then
   begin
     gbInfo.Enabled := False;
     gbInfo.Caption := RS_GB_INFO_CAPTION;
-    lblModelNumberData.Caption := '';
-    lbliOSVersionData.Caption := '';
-    lblSerialNumberData.Caption := '';
-    lblCycleCountData.Caption := '';
-    lblSpaceUsedData.Caption := '';
+    lblCycleCountData.Caption := '0';
+    lbliOSVersionData.Caption := '0.0.0';
+    lblModelNumberData.Caption := 'A0000';
+    lblSerialNumberData.Caption := 'DX0XXXXXX000';
+    lblSpaceUsedData.Caption := '0GB / 0GB';
   end;
 end;
 

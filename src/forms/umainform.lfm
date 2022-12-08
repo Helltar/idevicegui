@@ -1,19 +1,19 @@
 object frmMain: TfrmMain
-  Left = 685
-  Height = 171
-  Top = 415
+  Left = 731
+  Height = 450
+  Top = 303
   Width = 400
   Action = actUpdateButtons
   AutoSize = True
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'idevicegui'
-  ClientHeight = 171
+  ClientHeight = 450
   ClientWidth = 400
   Color = 3355443
   Constraints.MinWidth = 400
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '2.2.4.0'
   object gbInfo: TGroupBox
@@ -24,7 +24,7 @@ object frmMain: TfrmMain
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = btnMount
     Left = 24
-    Height = 39
+    Height = 318
     Top = 48
     Width = 352
     Anchors = [akTop, akLeft, akRight, akBottom]
@@ -33,7 +33,7 @@ object frmMain: TfrmMain
     BorderSpacing.Top = 12
     BorderSpacing.Right = 24
     Caption = 'not plugged'
-    ClientHeight = 5
+    ClientHeight = 284
     ClientWidth = 348
     Color = 3355443
     Enabled = False
@@ -54,7 +54,7 @@ object frmMain: TfrmMain
       Width = 45
       BorderSpacing.Around = 24
       Caption = 'Model'
-      Font.Color = clSilver
+      Font.Color = 15856113
       ParentColor = False
       ParentFont = False
     end
@@ -70,7 +70,7 @@ object frmMain: TfrmMain
       Width = 123
       BorderSpacing.Around = 24
       Caption = 'Software Version'
-      Font.Color = clSilver
+      Font.Color = 15856113
       ParentColor = False
       ParentFont = False
     end
@@ -86,7 +86,7 @@ object frmMain: TfrmMain
       Width = 102
       BorderSpacing.Around = 24
       Caption = 'Serial Number'
-      Font.Color = clSilver
+      Font.Color = 15856113
       ParentColor = False
       ParentFont = False
     end
@@ -102,7 +102,7 @@ object frmMain: TfrmMain
       Width = 140
       BorderSpacing.Around = 24
       Caption = 'Battery Cycle Count'
-      Font.Color = clSilver
+      Font.Color = 15856113
       ParentColor = False
       ParentFont = False
     end
@@ -117,7 +117,7 @@ object frmMain: TfrmMain
       BorderSpacing.Left = 24
       BorderSpacing.Bottom = 24
       Caption = 'Space Used'
-      Font.Color = clSilver
+      Font.Color = 15856113
       ParentColor = False
       ParentFont = False
     end
@@ -125,13 +125,14 @@ object frmMain: TfrmMain
       AnchorSideTop.Control = gbInfo
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 323
-      Height = 1
+      Left = 277
+      Height = 22
       Top = 24
-      Width = 1
+      Width = 47
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
-      Font.Color = clSilver
+      Caption = 'A0000'
+      Font.Color = 15856113
       ParentColor = False
       ParentFont = False
     end
@@ -140,13 +141,14 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 323
-      Height = 1
-      Top = 49
-      Width = 1
+      Left = 288
+      Height = 22
+      Top = 70
+      Width = 36
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
-      Font.Color = clSilver
+      Caption = '0.0.0'
+      Font.Color = 15856113
       ParentColor = False
       ParentFont = False
     end
@@ -156,14 +158,15 @@ object frmMain: TfrmMain
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
       Cursor = crHandPoint
-      Left = 323
-      Height = 1
+      Left = 207
+      Height = 22
       Hint = 'Copy to clipboard'
-      Top = 74
-      Width = 1
+      Top = 116
+      Width = 117
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
-      Font.Color = clSilver
+      Caption = 'DX0XXXXXX000'
+      Font.Color = 15856113
       ParentColor = False
       ParentFont = False
       ParentShowHint = False
@@ -175,13 +178,14 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 323
-      Height = 1
-      Top = 99
-      Width = 1
+      Left = 315
+      Height = 22
+      Top = 162
+      Width = 9
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
-      Font.Color = clSilver
+      Caption = '0'
+      Font.Color = 15856113
       ParentColor = False
       ParentFont = False
     end
@@ -190,13 +194,14 @@ object frmMain: TfrmMain
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = gbInfo
       AnchorSideRight.Side = asrBottom
-      Left = 323
-      Height = 1
-      Top = 124
-      Width = 1
+      Left = 249
+      Height = 22
+      Top = 208
+      Width = 75
       Anchors = [akTop, akRight]
       BorderSpacing.Around = 24
-      Font.Color = clSilver
+      Caption = '0GB / 0GB'
+      Font.Color = 15856113
       ParentColor = False
       ParentFont = False
     end
@@ -208,7 +213,7 @@ object frmMain: TfrmMain
     Cursor = crHandPoint
     Left = 24
     Height = 36
-    Top = 111
+    Top = 390
     Width = 162
     Anchors = [akLeft, akBottom]
     BorderSpacing.Around = 24
@@ -225,7 +230,7 @@ object frmMain: TfrmMain
     Cursor = crHandPoint
     Left = 214
     Height = 36
-    Top = 111
+    Top = 390
     Width = 162
     Anchors = [akTop, akRight]
     BorderSpacing.Around = 24
@@ -258,12 +263,12 @@ object frmMain: TfrmMain
   end
   object tmMain: TTimer
     OnTimer = tmMainTimer
-    Left = 328
-    Top = 216
+    Left = 136
+    Top = 16
   end
   object pmMain: TPopupMenu
-    Left = 328
-    Top = 304
+    Left = 48
+    Top = 16
     object miSettings: TMenuItem
       Caption = '&Settings'
       OnClick = miSettingsClick
@@ -281,8 +286,8 @@ object frmMain: TfrmMain
     end
   end
   object actlMain: TActionList
-    Left = 328
-    Top = 128
+    Left = 232
+    Top = 16
     object actUpdateButtons: TAction
       Caption = 'idevicegui'
       DisableIfNoHandler = False
